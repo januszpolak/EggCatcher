@@ -160,6 +160,7 @@
             this.Controls.Add(this.egg1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.wolf);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "EggCatcher";

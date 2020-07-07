@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Media;
 using System.Windows.Forms;
 
 namespace EggCatcher
@@ -21,6 +22,7 @@ namespace EggCatcher
 
         }
 
+        //initialize function to move left and right
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Left)
@@ -41,6 +43,7 @@ namespace EggCatcher
             }
         }
 
+        //random egg positions
         Random randomLocation = new Random();
 
         int score = 0;
@@ -57,6 +60,7 @@ namespace EggCatcher
                 egg.Location = new Point((randomLocation.Next(275,520)),100);
             }
 
+            //event after wolf catch eggs or eggs destroy into a ground
             if (egg.Bounds.IntersectsWith(wolf.Bounds))
             {
                 egg.Location = new Point((randomLocation.Next(275, 520)), 100);
@@ -70,6 +74,7 @@ namespace EggCatcher
             }
         }
 
+        //initialize eggs animation
         private void timer1_Tick(object sender, EventArgs e)
         {
             falldown(egg1, 5);
@@ -78,6 +83,7 @@ namespace EggCatcher
             falldown(egg4, 3);
             falldown(egg5, 10);
         }
+
 
        
     }
