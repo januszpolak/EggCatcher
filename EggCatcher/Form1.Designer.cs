@@ -59,7 +59,6 @@
             this.wolf.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.wolf.TabIndex = 0;
             this.wolf.TabStop = false;
-            this.wolf.Click += new System.EventHandler(this.wolf_Click);
             // 
             // pictureBox1
             // 

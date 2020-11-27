@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Media;
 using System.Windows.Forms;
 
 namespace EggCatcher
@@ -17,24 +16,29 @@ namespace EggCatcher
 
         }
 
-        private void wolf_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         //initialize function to move left and right
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        public void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+
+            
+
             if (e.KeyCode == Keys.Left)
             {
+             
+                wolf.Image = Image.FromFile(@"D:\eggCatcher\wolfLeftTop.png");
+
                 if (wolf.Right > 275)
                 {
                     wolf.Left += -20;
                 }
-                
+
             }
             if (e.KeyCode == Keys.Right)
             {
+
+                wolf.Image = Image.FromFile(@"D:\eggCatcher\wolfRightTop.png");
                 if (wolf.Left < 520)
                 {
                     wolf.Left += +20;
@@ -49,15 +53,17 @@ namespace EggCatcher
         int score = 0;
         int missing = 0;
 
+
         public void falldown(PictureBox egg, int speed)
         {
-            if(egg.Top <= 300)
+
+            if (egg.Top <= 300)
             {
                 egg.Top += speed;
             }
             else if (egg.Top > 300)
             {
-                egg.Location = new Point((randomLocation.Next(275,520)),100);
+                egg.Location = new Point((randomLocation.Next(275, 520)), 100);
             }
 
             //event after wolf catch eggs or eggs destroy into a ground
@@ -67,24 +73,28 @@ namespace EggCatcher
                 score++;
                 points.Text = "Wynik: " + Convert.ToString(score);
             }
-            else if(egg.Top > 300)
+            else if (egg.Top > 300)
             {
                 missing++;
                 miss.Text = "Rozbite: " + Convert.ToString(missing);
             }
+
         }
+
+
 
         //initialize eggs animation
         private void timer1_Tick(object sender, EventArgs e)
         {
+
             falldown(egg1, 5);
             falldown(egg2, 8);
             falldown(egg3, 12);
             falldown(egg4, 3);
             falldown(egg5, 10);
+            
         }
 
-
-       
-    }
+      
+    }  
 }
