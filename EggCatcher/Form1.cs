@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Media;
 using System.Windows.Forms;
 
 namespace EggCatcher
@@ -13,7 +14,8 @@ namespace EggCatcher
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            SoundPlayer simpleSound = new SoundPlayer(@"D:\eggCatcher\ping.wav");
+            simpleSound.PlayLooping();
         }
 
         
@@ -72,6 +74,7 @@ namespace EggCatcher
                 egg.Location = new Point((randomLocation.Next(275, 520)), 100);
                 score++;
                 points.Text = "Wynik: " + Convert.ToString(score);
+
             }
             else if (egg.Top > 300)
             {
